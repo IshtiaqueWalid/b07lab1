@@ -4,6 +4,7 @@ public class Polynomial {
 
     public Polynomial() {
         coefficients = new double[1];
+        coefficients[0] = 0.0;
     }
 
     public Polynomial(double[] coefficients) {
