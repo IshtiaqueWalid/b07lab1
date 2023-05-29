@@ -26,8 +26,10 @@ public class Polynomial {
 
     public double evaluate(double x) {
         double sum = 0.0;
-        for (int i = 0; i < coefficients.length; i++) {
-            sum += coefficients[i] * Math.pow(x, i);
+        int i = 0;
+        for (double c : coefficients) {
+            sum += c * Math.pow(x, i);
+            i++;
         }
         return sum;
     }
