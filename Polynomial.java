@@ -4,7 +4,6 @@ public class Polynomial {
 
     public Polynomial() {
         coefficients = new double[1];
-        coefficients[0] = 0.0;
     }
 
     public Polynomial(double[] coefficients) {
@@ -14,7 +13,7 @@ public class Polynomial {
     public Polynomial add(Polynomial p) {
         Polynomial a = this;
         Polynomial b = p;
-        if (coefficients.length < p.coefficients.length) {
+        if (this.coefficients.length < p.coefficients.length) {
             a = p;
             b = this;
         }
