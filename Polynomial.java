@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Polynomial {
@@ -157,6 +158,25 @@ public class Polynomial {
             t = t.add(multiplyTerm(p, coefficients[i], exponents[i]));
         }
         return t;
+    }
+
+    public void saveToFile(String filename) throws Exception {
+        File f = new File(filename);
+        f.createNewFile();
+        FileWriter writer = new FileWriter(f);
+        String str = "";
+        for (int i = 0; i < exponents.length; i++) {
+            if (coefficients[i] == 0.0) continue;
+            if (coefficients[i] != 1.0) {
+                if (coefficients[i] == (int)coefficients[i]) str += (int)coefficients[i];
+                else str += coefficients[i];
+            }
+            if (exponents[i] == 1) str += "x";
+            if (exponents[i] > 1) str += "x" + exponents[i];
+            if (i < exponents.length - 1 && coefficients[i + 1] > 0.0) str += "+";
+        }
+        writer.write(str);
+        writer.close();
     }
 
     public void print() {
