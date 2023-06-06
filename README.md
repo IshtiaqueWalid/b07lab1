@@ -1,3 +1,3 @@
-# b07lab1
+# b07lab2
 
-This is my submission for Lab 1 of CSCB07.
+This is my submission for Lab 2 of CSCB07.
